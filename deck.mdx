@@ -1,0 +1,74 @@
+import { Head, Appear } from 'mdx-deck';
+import MathJax from 'react-mathjax';
+import Code from 'mdx-code';
+
+import LeftLayout from './src/layout/LeftLayout';
+
+export { default as theme } from './theme'
+
+<Head>
+  <title>Recursión</title>
+</Head>
+
+# Recursión
+
+<small>20 de febrero de 2019</small>
+
+```notes
+- Create speaker notes in fenced code blocks
+```
+
+---
+
+export default LeftLayout;
+
+## Factorial
+
+<MathJax.Provider>
+  <MathJax.Node inline formula={'n! = n × (n - 1) × (n - 2) × ... × 3 × 2 × 1'}/>
+</MathJax.Provider>
+
+```notes
+- Create speaker notes in fenced code blocks
+```
+
+---
+
+export default LeftLayout;
+
+## Factorial (ejemplo)
+
+<MathJax.Provider>
+  <div><MathJax.Node inline formula={'5! = 5 × 4 × 3 × 2 × 1 = 120'}/></div>
+  <Appear>
+    <div><MathJax.Node inline formula={'5! = 5 × (4 × 3 × 2 × 1)'}/></div>
+    <div><MathJax.Node inline formula={'5! = 5 × 4!'}/></div>
+    <div><MathJax.Node inline formula={'5! = 5 × (4 × 3!)'}/></div>
+    <div><MathJax.Node inline formula={'5! = 5 × (4 × (3 × 2!))'}/></div>
+    <div><MathJax.Node inline formula={'5! = 5 × (4 × (3 × (2 × 1!)))'}/></div>
+    <div><MathJax.Node inline formula={'5! = 5 × (4 × (3 × (2 × 1)))'}/></div>
+    <div><MathJax.Node inline formula={'5! = 5 × 4 × 3 × 2 × 1 = 120'}/></div>
+  </Appear>
+</MathJax.Provider>
+
+---
+
+import FactorialIterCode from './src/slides/FactorialIterCode';
+
+export default FactorialIterCode;
+
+---
+
+import FactorialCode from './src/slides/FactorialCode';
+
+export default FactorialCode;
+
+---
+
+import FactoriaCodelExplanation from './src/slides/FactorialCodeExplanation';
+
+export default FactoriaCodelExplanation;
+
+---
+
+<https://github.com/jxnblk/mdx-deck>
