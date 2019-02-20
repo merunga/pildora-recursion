@@ -17,11 +17,14 @@ export default function sketch(p) {
 
   function drawCircle(x, y, radius) {
     p.ellipse(x, y, radius, radius);
-    if (radius <= radiusAllowed || radius < 2) {
+    if (radius <= radiusAllowed || radius < 8) {
       return;
     }
     drawCircle(x + radius / 2, y, radius / 2);
     drawCircle(x - radius / 2, y, radius / 2);
+
+    drawCircle(x, y + radius / 2, radius / 2);
+    drawCircle(x, y - radius / 2, radius / 2);
   }
 
   p.mousePressed = function (e) {
