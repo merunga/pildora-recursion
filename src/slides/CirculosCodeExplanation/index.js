@@ -15,7 +15,7 @@ export default () => (
     steps={[
       { notes: 'Veamos el código que genera los círculos' },
       { range: [1, 3], notes: 'Creamos el canvas donde vamos a dibujar, con dimensiones 400x400' },
-      { range: [5, 8], notes: () => md('Por como funcion `p5.js`, la función `draw` se va a ejecutar para cada ciclo de pintado\n\nVamos a pintar un circulo en el centro del `canvas` con un radio de `200px`') },
+      { range: [5, 8], notes: () => md('Por como funciona `p5.js`, la función `draw` se va a ejecutar para cada ciclo de pintado\n\nVamos a pintar un circulo en el centro del `canvas` con un radio de `200px`') },
       { lines: [11], notes: () => md('El color de nuestro "lapiz" será negro') },
       { lines: [12], notes: () => md('Sin relleno') },
       { lines: [13], notes: () => md('Dibujamos la `ellipsis` con la función que nos brinda `p5.js`') },

@@ -8,7 +8,8 @@
     "pdf": "mdx-deck pdf deck.mdx",
     "image": "mdx-deck screenshot deck.mdx",
     "help": "mdx-deck",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "eslint": "^5.14.1",
@@ -16,6 +17,7 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
+    "gh-pages": "^2.0.1",
     "mdx-code": "^1.1.3",
     "mdx-deck": "^1.6.7",
     "mdx-deck-code-surfer": "^0.5.5",
