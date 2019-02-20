@@ -20,8 +20,8 @@ export default () => (
       { lines: [12], notes: () => md('Sin relleno') },
       { lines: [13], notes: () => md('Dibujamos la `ellipsis` con la función que nos brinda `p5.js`') },
       { range: [14, 16], notes: () => md('Aquí nuestro caso base: si el radio del círculo es menor a `2px` no dibujar') },
-      { lines: [17], notes: 'Y aquí la primera recursión: volvemos a ejecutar la función pero ahora dibujando el círculo a la derecha del original con un radio igual a la mitad' },
-      { lines: [18], notes: 'Y aquí la segunda recursión: volvemos a ejecutar la función pero ahora dibujando el círculo a la izquierda del original con un radio igual a la mitad' },
+      { lines: [17], notes: () => md('Y aquí la primera recursión: volvemos a ejecutar la función pero ahora\n\ndibujando el círculo a la derecha del original con un radio igual a la mitad') },
+      { lines: [18], notes: () => md('Y aquí la segunda recursión: volvemos a ejecutar la función pero ahora\n\ndibujando el círculo a la izquierda del original con un radio igual a la mitad') },
       { range: [5, 19], notes: 'Y el proceso se repite' },
     ]}
   />
