@@ -22,15 +22,11 @@ export { default as theme } from './theme'
 
 export default LeftLayout;
 
-## Factorial
+## Ejemplo 1: Factorial
 
 <MathJax.Provider>
   <MathJax.Node inline formula={'n! = n × (n - 1) × (n - 2) × ... × 3 × 2 × 1'}/>
 </MathJax.Provider>
-
-```notes
-- Create speaker notes in fenced code blocks
-```
 
 ---
 
@@ -68,6 +64,48 @@ export default FactorialCode;
 import FactoriaCodelExplanation from './src/slides/FactorialCodeExplanation';
 
 export default FactoriaCodelExplanation;
+
+---
+
+## Ejercicio: Número de Fibonacci
+
+<MathJax.Provider>
+  <Appear>
+    <div>
+      <div><MathJax.Node inline formula={'Fib(0) = 0'}/></div>
+      <div><MathJax.Node inline formula={'Fib(1) = 1'}/></div>
+      y
+      <div>
+        <MathJax.Node inline formula={'Fib(n) = Fib(n-1) + Fib(n-2)'}/>,
+        para <MathJax.Node inline formula={'n > 1'}/>
+      </div>
+    </div>
+  </Appear>
+</MathJax.Provider>
+
+---
+
+### Ejercicio: Número de Fibonacci
+
+De esta manera
+
+<MathJax.Provider>
+  <div><MathJax.Node inline formula={'Fib(0) = 0'}/></div>
+  <div><MathJax.Node inline formula={'Fib(1) = 1'}/></div>
+  <div><MathJax.Node inline formula={'Fib(2) = 1'}/></div>
+  <div><MathJax.Node inline formula={'Fib(3) = 2'}/></div>
+  <div><MathJax.Node inline formula={'Fib(4) = 3'}/></div>
+  <div><MathJax.Node inline formula={'Fib(5) = 5'}/></div>
+  <div><MathJax.Node inline formula={'Fib(6) = 8'}/></div>
+  <div><MathJax.Node inline formula={'Fib(7) = 13'}/></div>
+</MathJax.Provider>
+
+---
+
+export default Code;
+
+```javascript Ejercicio: Número de Fibonacci
+```
 
 ---
 
