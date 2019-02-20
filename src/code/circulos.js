@@ -9,15 +9,15 @@ export default function sketch(p) {
   };
 
   p.draw = function () {
+    p.stroke(0);
+    p.noFill();
     p.background(255);
 	  drawCircle(p.width / 2, p.height / 2, 200);
   };
 
   function drawCircle(x, y, radius) {
-    p.stroke(0);
-    p.noFill();
     p.ellipse(x, y, radius, radius);
-    if (radius <= radiusAllowed && radius > 2) {
+    if (radius <= radiusAllowed || radius < 8) {
       return;
     }
     drawCircle(x + radius / 2, y, radius / 2);
