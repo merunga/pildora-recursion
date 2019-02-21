@@ -2,10 +2,10 @@ import { Head, Appear } from 'mdx-deck';
 import MathJax from 'react-mathjax';
 import Code from 'mdx-code';
 import { Split } from 'mdx-deck/layouts'
-import { Notes } from 'mdx-deck'
+// import { Notes } from 'mdx-deck'
 
 import LeftLayout from './src/layout/LeftLayout';
-import MD from './src/lib/Markdown';
+// import MD from './src/lib/Markdown';
 
 export { default as theme } from './theme'
 
@@ -29,14 +29,12 @@ export default LeftLayout;
   <MathJax.Node inline formula={'n! = n × (n - 1) × (n - 2) × ... × 3 × 2 × 1'}/>
 </MathJax.Provider>
 
-<Notes>
-  <MD>
+```notes
 En la matemática, la función factorial de un número entero positivo ***n***
 se define como el producto (multiplicación) de todos los números enteros
 positivos menores o iguales que ***n***, y se denota de la siguiente
 manera: ***n!***
-  </MD>
-</Notes>
+```
 ---
 
 export default LeftLayout;
@@ -70,12 +68,10 @@ import FactorialIterCode from './src/slides/FactorialIterCode';
 
 export default () => <FactorialIterCode noCode={noCode} />;
 
-<Notes>
-  <MD>
+```notes
 Esta implementación poco tiene que ver
 con la definición matemática del problema.
-  </MD>
-</Notes>
+```
 
 ---
 
@@ -97,12 +93,10 @@ import FactorialCode from './src/slides/FactorialCode';
 
 export default () => <FactorialCode noCode={noCode} />;
 
-<Notes>
-  <MD>
+```notes
 Mas elegante, no? Ahora la implementación de `factorial(n)`,
 está expresada en función de `factorial(n-1)`.
-  </MD>
-</Notes>
+```
 
 ---
 
@@ -110,7 +104,14 @@ import FactoriaCodelExplanation from './src/slides/FactorialCodeExplanation';
 
 export default FactoriaCodelExplanation;
 
+```notes
+Y esa es la definición de una función recursiva:
+*una función que se llama a sí misma*.
 
+Y en general podemos hablar de **recursión** cómo un método para resolver
+problemas, donde la solución global depende de la solución de instancias
+más pequeñas del mismo problema.
+```
 
 ---
 
@@ -118,7 +119,15 @@ import SinCasoBase from './src/slides/SinCasoBase';
 
 export default () => <SinCasoBase noCode={noCode} />;
 
+```notes
+Algo muy importante de recordar:
+> Toda función recursiva cuenta con un caso base, que es un paso donde
+> la función retorna un resultado trivial, sin incurrir en recursión.
 
+Ten en cuenta que si tus funciones recursivas no cuentan con un caso base,
+no terminarían nunca de ejecutarse... en realidad terminan de ejecutarse
+cuando agotan los recursos asignados.
+```
 
 ---
 
@@ -212,7 +221,13 @@ export default CirculosCuatro;
   <h3>Ejemplo: Árboles (DOM)</h3>
 </Appear>
 
+```notes
+Así como existen las funciones recursivas, también existen los **tipos de datos recursivos**.
 
+Estos se caracterizan por estar compuestos por instancias mas pequeñas de la misma estructura.
+
+Al tener esta caracteristica muchas de las operaciones que se pueden realizar sobre ellos, son a su vez recursivas.
+```
 
 ---
 
@@ -248,13 +263,33 @@ import WalkTheDomCodeIter from './src/slides/WalkTheDom/CodeIter';
 
 export default WalkTheDomCodeIter;
 
+```notes
+Aqui es importante que nos detengamos un segundo a analizar esta situacion
+Cuando nos encontramos con un tipo de datos recursivo, es muy importante
+que saquemos provecho de esa situacion, utilizando funciones recursivas para
+recorrerlo y manipularlo.
 
-
+En caso contrario, yendo contra la naturaleza del tipo de dato e intentando,
+de manipularlo de manera iterativa, terminamos creando funciones muy dificiles
+de comprender e implementar y de bajisima legibilidad.
+```
 ---
 
 # Conclusión
 
+<https://github.com/merunga/pildora-recursion>
+
 <https://merunga.github.io/pildora-recursion>
 
+<https://youtu.be/lPPgY3HLlhQ>
 
+```notes
+Hemos podido ver a través de tres ejemplos la magia y la elegancia de la recursión
+
+- Primero a traves de funciones recursivas que emulan en su implementación, a su definición formal
+
+- Hemos visto de manera gráfica paso a paso la ejecución de un funcion recursiva
+
+- Y finalmente hemos hablado de las estructuras de datos recursivas, y como
+podemos usar la recursion para recorrerlas
 
