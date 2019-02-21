@@ -2,8 +2,10 @@ import { Head, Appear } from 'mdx-deck';
 import MathJax from 'react-mathjax';
 import Code from 'mdx-code';
 import { Split } from 'mdx-deck/layouts'
+import { Notes } from 'mdx-deck'
 
 import LeftLayout from './src/layout/LeftLayout';
+import MD from './src/lib/Markdown';
 
 export { default as theme } from './theme'
 
@@ -17,10 +19,6 @@ import noCode from './src/lib/no-code';
 
 <small>21 de febrero de 2019</small>
 
-```notes
-- Create speaker notes in fenced code blocks
-```
-
 ---
 
 export default LeftLayout;
@@ -31,6 +29,14 @@ export default LeftLayout;
   <MathJax.Node inline formula={'n! = n × (n - 1) × (n - 2) × ... × 3 × 2 × 1'}/>
 </MathJax.Provider>
 
+<Notes>
+  <MD>
+En la matemática, la función factorial de un número entero positivo ***n***
+se define como el producto (multiplicación) de todos los números enteros
+positivos menores o iguales que ***n***, y se denota de la siguiente
+manera: ***n!***
+  </MD>
+</Notes>
 ---
 
 export default LeftLayout;
@@ -64,6 +70,13 @@ import FactorialIterCode from './src/slides/FactorialIterCode';
 
 export default () => <FactorialIterCode noCode={noCode} />;
 
+<Notes>
+  <MD>
+Esta implementación poco tiene que ver
+con la definición matemática del problema.
+  </MD>
+</Notes>
+
 ---
 
 export default LeftLayout;
@@ -84,17 +97,28 @@ import FactorialCode from './src/slides/FactorialCode';
 
 export default () => <FactorialCode noCode={noCode} />;
 
+<Notes>
+  <MD>
+Mas elegante, no? Ahora la implementación de `factorial(n)`,
+está expresada en función de `factorial(n-1)`.
+  </MD>
+</Notes>
+
 ---
 
 import FactoriaCodelExplanation from './src/slides/FactorialCodeExplanation';
 
 export default FactoriaCodelExplanation;
 
+
+
 ---
 
 import SinCasoBase from './src/slides/SinCasoBase';
 
 export default () => <SinCasoBase noCode={noCode} />;
+
+
 
 ---
 
@@ -188,6 +212,8 @@ export default CirculosCuatro;
   <h3>Ejemplo: Árboles (DOM)</h3>
 </Appear>
 
+
+
 ---
 
 export default Split
@@ -203,7 +229,7 @@ import WalkTheDomDomCode from './src/slides/WalkTheDom/DomCode';
 
 import WalkTheDomCode from './src/slides/WalkTheDom/Code';
 
-export default WalkTheDomCode;
+export default () => <WalkTheDomCode noCode={noCode} />;
 
 ---
 
@@ -222,8 +248,13 @@ import WalkTheDomCodeIter from './src/slides/WalkTheDom/CodeIter';
 
 export default WalkTheDomCodeIter;
 
+
+
 ---
 
 # Conclusión
 
 <https://merunga.github.io/pildora-recursion>
+
+
+
