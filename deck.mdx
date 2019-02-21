@@ -1,6 +1,7 @@
 import { Head, Appear } from 'mdx-deck';
 import MathJax from 'react-mathjax';
 import Code from 'mdx-code';
+import { Split } from 'mdx-deck/layouts'
 
 import LeftLayout from './src/layout/LeftLayout';
 
@@ -12,7 +13,7 @@ export { default as theme } from './theme'
 
 # Recursión
 
-<small>20 de febrero de 2019</small>
+<small>21 de febrero de 2019</small>
 
 ```notes
 - Create speaker notes in fenced code blocks
@@ -44,14 +45,36 @@ export default LeftLayout;
     <div><MathJax.Node inline formula={'5! = 5 × (4 × (3 × (2 × 1!)))'}/></div>
     <div><MathJax.Node inline formula={'5! = 5 × (4 × (3 × (2 × 1)))'}/></div>
     <div><MathJax.Node inline formula={'5! = 5 × 4 × 3 × 2 × 1 = 120'}/></div>
+    <br/>
+    <MathJax.Node inline formula={'1! = 1'}/>
+    <div>
+      <MathJax.Node inline formula={'n! = n * (n-1)!'}/>{'   '}
+      para <MathJax.Node inline formula={'n > 1'}/>
+    </div>
   </Appear>
 </MathJax.Provider>
 
 ---
 
+## Factorial (ejemplo)
+
 import FactorialIterCode from './src/slides/FactorialIterCode';
 
 export default FactorialIterCode;
+
+---
+
+export default LeftLayout;
+
+## Factorial
+
+<MathJax.Provider>
+  <MathJax.Node inline formula={'1! = 1'}/>
+  <div>
+    <MathJax.Node inline formula={'n! = n * (n-1)!'}/>{'   '}
+    para <MathJax.Node inline formula={'n > 1'}/>
+  </div>
+</MathJax.Provider>
 
 ---
 
@@ -64,6 +87,12 @@ export default FactorialCode;
 import FactoriaCodelExplanation from './src/slides/FactorialCodeExplanation';
 
 export default FactoriaCodelExplanation;
+
+---
+
+import SinCasoBase from './src/slides/SinCasoBase';
+
+export default SinCasoBase;
 
 ---
 
@@ -151,4 +180,34 @@ export default CirculosCuatro;
 
 ---
 
-<https://github.com/jxnblk/mdx-deck>
+## Estructuras de datos recursivas
+
+<Appear>
+  <h3>Ejemplo: Árboles (DOM)</h3>
+</Appear>
+
+---
+
+export default Split
+
+import WalkTheDomDom from './src/slides/WalkTheDom/Dom';
+import WalkTheDomDomCode from './src/slides/WalkTheDom/DomCode';
+
+<WalkTheDomDom />
+
+<WalkTheDomDomCode />
+
+---
+
+export default Split
+
+import WalkTheDomIFrame from './src/slides/WalkTheDom/IFrame';
+import WalkTheDomCode from './src/slides/WalkTheDom/Code';
+
+<WalkTheDomIFrame />
+
+<WalkTheDomCode />
+
+---
+
+<https://merunga.github.io/pildora-recursion>
