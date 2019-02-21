@@ -24,5 +24,9 @@ module.exports = {
     'operator-assignment': [0],
     'import/no-webpack-loader-syntax': [0],
     'global-require': [0],
+    'no-labels': [0],
+    'no-restricted-syntax': [0],
+    'no-unused-vars': [0],
+    'no-param-reassign': [0],
   },
 };

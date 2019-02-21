@@ -1,13 +1,13 @@
-export function walkTheDOM(node, funcToApply) {
+function walkTheDOM(node, funcToApply) {
   funcToApply(node);
-  let n = node.firstChild;
-  while (n) {
-    walkTheDOM(n, funcToApply);
-    n = n.nextSibling;
+  let child = node.firstChild;
+  while (child) {
+    walkTheDOM(child, funcToApply);
+    child = child.nextSibling;
   }
 }
 
-export function reverseTextNodes(elem) {
+function reverseTextNodes(elem) {
   // recorremos el dom e invertimos todos los textos
   walkTheDOM(elem, (node) => {
     if (node.nodeType === 3) { // Es texto?

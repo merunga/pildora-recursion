@@ -1,8 +1,9 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter/prism';
-import { duotoneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import Code from '../../lib/RunKitCode';
 
-export default () => {
-  const codeString = require('!raw-loader!../../code/walk-the-dom.js');
-  return <SyntaxHighlighter language="javascript" style={duotoneLight}>{codeString}</SyntaxHighlighter>;
+export default ({ noCode }) => {
+  const source = require('!raw-loader!../../code/walk-the-dom.js');
+  return (
+    <Code title="Recorrer el DOM" source={noCode ? '' : `${source}`} />
+  );
 };

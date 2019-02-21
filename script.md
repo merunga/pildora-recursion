@@ -138,3 +138,75 @@ un solo padre, y pueden tener 0, 1 o mas hijos. Estos hijos tienen a su vez la m
 
 Ahora bien, veamos un ejemplo de como recorrer todos los elementos del DOM con una funcion recursiva
 
+```
+export function walkTheDOM(node, funcToApply) {
+  funcToApply(node);
+  let n = node.firstChild;
+  while (n) {
+    walkTheDOM(n, funcToApply);
+    n = n.nextSibling;
+  }
+}
+
+export function reverseTextNodes(elem) {
+  // recorremos el dom e invertimos todos los textos
+  walkTheDOM(elem, (node) => {
+    if (node.nodeType === 3) { // Es texto?
+      const text = node.data.trim();
+      if (text.length > 0) { // tiene algo que no sea vacio
+        // invertimos su contenido
+        node.data = text.split('').reverse().join('');
+      }
+    }
+  });
+}
+```
+
+Bonito verdad, ahora veamos como podriamos implementar lo mismo de manera
+iterativa
+
+```
+function walkTheDOMIter(root, funcToApply) {
+  let node = root;
+
+  start: while (node) {
+    funcToApply(node);
+    if (node.firstChild) {
+      node = node.firstChild;
+      continue start;
+    }
+
+    while (node) {
+      if (node === root) {
+        break start;
+      }
+
+      if (node.nextSibling) {
+        node = node.nextSibling;
+        continue start;
+      }
+
+      node = node.parentNode;
+    }
+  }
+}
+```
+
+una autentica monstruosidad, donde usamos breaks, continues y labels... la conjuncion de todas las malas practicas juntas.
+
+Aqui es importante que nos detengamos un segundo a analizar esta situacion
+Cuando nos encontramos con un tipo de datos recursivo, es muy importante
+que saquemos provecho de esa situacion, utilizando funciones recursivas para
+recorrerlo y manipularlo.
+
+En caso contrario, yendo contra la naturaleza del tipo de dato e intentando, de manipularlo de manera iterativa, terminamos
+creando funciones muy dificiles de comprender y de bajisima legibilidad
+
+# Conclusión
+
+Hemos podido ver a través de tres ejemplos la magia y la elegancia de la recursión
+
+- Primero a traves de funciones recursivas que emulan en su implementación, a su definición formal
+- Hemos visto de manera gráfica paso a paso la ejecución de un funcion recursiva
+- Y finalmente hemos hablado de las estructuras de datos recursivas, y como
+podemos usar la recursion para recorrerlas
