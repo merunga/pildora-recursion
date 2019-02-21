@@ -18,3 +18,11 @@ Puedes ver las notas de la presentación en modo
 
 
 ## Recursos
+
+- Factorial
+- [Fibonacci](https://es.wikipedia.org/wiki/Sucesi%C3%B3n_de_Fibonacci)
+- [P5.js](https://p5js.org)
+- [Fractales](https://natureofcode.com/book/chapter-8-fractals/)
+- [Mandelbrot Viewer](http://math.hws.edu/eck/js/mandelbrot/MB.html)
+
+Esta presentación fue creada con el genial [`mdx-deck`](https://github.com/jxnblk/mdx-deck)
