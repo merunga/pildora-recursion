@@ -9,7 +9,7 @@
     "image": "mdx-deck screenshot deck.mdx",
     "help": "mdx-deck",
     "lint": "eslint .",
-    "deploy": "gh-pages -d dist"
+    "deploy": "yarn build && gh-pages -d dist"
   },
   "devDependencies": {
     "eslint": "^5.14.1",

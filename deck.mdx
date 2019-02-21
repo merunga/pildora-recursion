@@ -11,6 +11,8 @@ export { default as theme } from './theme'
   <title>Recursión</title>
 </Head>
 
+import noCode from './src/lib/no-code';
+
 # Recursión
 
 <small>21 de febrero de 2019</small>
@@ -60,7 +62,7 @@ export default LeftLayout;
 
 import FactorialIterCode from './src/slides/FactorialIterCode';
 
-export default FactorialIterCode;
+export default () => <FactorialIterCode noCode={noCode} />;
 
 ---
 
@@ -80,7 +82,7 @@ export default LeftLayout;
 
 import FactorialCode from './src/slides/FactorialCode';
 
-export default FactorialCode;
+export default () => <FactorialCode noCode={noCode} />;
 
 ---
 
@@ -92,7 +94,7 @@ export default FactoriaCodelExplanation;
 
 import SinCasoBase from './src/slides/SinCasoBase';
 
-export default SinCasoBase;
+export default () => <SinCasoBase noCode={noCode} />;
 
 ---
 
